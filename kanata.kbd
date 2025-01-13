@@ -34,25 +34,3 @@
   l (t! charmod l lalt)
   ; (t! charmod ; lctl)
 )
-
-;; First implementation of homerow
-;; (deflayer homerow
-;;   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-;;   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-;;   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-;;   lctl @home_a   @home_s   @home_d   @home_f   g   h   @home_j   @home_k   @home_l   @home_;     '    ret
-;;   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
-;;   fn   lctl lalt lmet           spc            rmet ralt left down rght
-;; )
-
-;; (defalias
-;;     home_a (tap-hold-release 200 200 a lctl)
-;;     home_s (tap-hold-release 200 200 s lalt)
-;;     home_d (tap-hold-release 200 200 d lmet)
-;;     home_f (tap-hold-release 200 200 f lsft)
-
-;;     home_j (tap-hold-release 200 200 j rsft)
-;;     home_k (tap-hold-release 200 200 k rmet)
-;;     home_l (tap-hold-release 200 200 l lalt)
-;;     home_; (tap-hold-release 200 200 ; rctl)
-;; )
