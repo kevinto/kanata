@@ -16,6 +16,7 @@
   fn   lctl lalt lmet           spc            rmet ralt left down rght
 )
 
+;; This implementation is based on https://github.com/jtroo/kanata/discussions/1455#discussion-7766783
 (deftemplate charmod (char mod)
   (switch 
     ((key-timing 3 less-than 450)) $char break
