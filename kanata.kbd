@@ -1,0 +1,58 @@
+(defcfg
+  ;; This option tells KMonad to let non-configured keys act normal
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+    ;; "Device name 2"
+  )
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
+)
+
+(deftemplate charmod (char mod)
+  (switch 
+    ((key-timing 3 less-than 450)) $char break
+    () (tap-hold-release-timeout 200 500 $char $mod $char) break
+  )
+)
+
+(deflayermap (main)
+  caps lctl
+  a (t! charmod a lctl)
+  s (t! charmod s lalt)
+  d (t! charmod d lmet)
+  f (t! charmod f lsft)
+  j (t! charmod j lsft)
+  k (t! charmod k lmet)
+  l (t! charmod l lalt)
+  ; (t! charmod ; lctl)
+)
+
+;; First implementation of homerow
+;; (deflayer homerow
+;;   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+;;   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+;;   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+;;   lctl @home_a   @home_s   @home_d   @home_f   g   h   @home_j   @home_k   @home_l   @home_;     '    ret
+;;   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+;;   fn   lctl lalt lmet           spc            rmet ralt left down rght
+;; )
+
+;; (defalias
+;;     home_a (tap-hold-release 200 200 a lctl)
+;;     home_s (tap-hold-release 200 200 s lalt)
+;;     home_d (tap-hold-release 200 200 d lmet)
+;;     home_f (tap-hold-release 200 200 f lsft)
+
+;;     home_j (tap-hold-release 200 200 j rsft)
+;;     home_k (tap-hold-release 200 200 k rmet)
+;;     home_l (tap-hold-release 200 200 l lalt)
+;;     home_; (tap-hold-release 200 200 ; rctl)
+;; )
