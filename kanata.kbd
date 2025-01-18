@@ -34,4 +34,12 @@
   k (t! charmod k lmet)
   l (t! charmod l lalt)
   ; (t! charmod ; lctl)
+  f1 brdn
+  f2 brup
+  f7 prev
+  f8 pp
+  f9 next
+  f10 mute
+  f11 vold
+  f12 volu
 )
